@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
+import { ClerkProvider } from "@clerk/nextjs";
+import ConvexClientProvider from "@/providers/convex-client-provider";
 
 const neueMon = localFont({
   src: [
@@ -35,7 +37,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${neueMon.variable} antialiased`}>{children}</body>
+      <ClerkProvider>
+        <body className={`${neueMon.variable} antialiased`}>
+          <ConvexClientProvider>{children}</ConvexClientProvider>
+        </body>
+      </ClerkProvider>
     </html>
   );
 }
