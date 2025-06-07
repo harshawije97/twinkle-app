@@ -4,6 +4,7 @@
     "": {
       "name": "twinkle-app",
       "dependencies": {
+        "@clerk/backend": "^2.0.0",
         "@clerk/nextjs": "^6.21.0",
         "@hookform/resolvers": "^5.0.1",
         "@radix-ui/react-accordion": "^1.2.11",
